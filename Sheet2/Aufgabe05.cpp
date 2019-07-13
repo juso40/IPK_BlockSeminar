@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+
+
+int convert_number(std::string number){
+    int zahl = 0;
+    char zero = '0';
+
+    for (int i=0; i<number.size(); i++){
+        if (number[i]<='9' && number[i]>='0'){
+            zahl=zahl*10+number[i]-zero;
+        }
+    }
+    return zahl;
+}
+
+
+int main(){
+
+    std::string zahl;
+    std::cout<<"Gib Zahl pls: "<<std::flush;
+    std::getline(std::cin,zahl);
+
+    std::cout<<"als int: "<<convert_number(zahl)<<std::endl;
+
+}
